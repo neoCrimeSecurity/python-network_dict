@@ -63,6 +63,10 @@ Adding Subnets
 Hosts (IPv4 /32 or IPv6 /128)
 -----------------------------
 
+Host records are ignored by default.  If not netmask is supplied, a hostmask is assumed.
+
+You can optionally enable hosts.  This will likely change to smallest accepted prefix, in the future.
+
 .. code:: python
 
     >>> nd['10.1.1.1'] = 'Router'
