@@ -37,7 +37,7 @@ Simple Example
     ['City 1', 'Region 1', 'Office', 'Everything']
 
     >>> nd.format = both
-    # return both the subnet and value in a tuple
+    # return both the subnet and value in a tuple, default is "value"
     >>> nd['10.1.1.1']
     [('10.1.1.0/24', 'City 1'), ('10.1.0.0/16', 'Region 1'), ('10.0.0.0/8', 'Office'), ('0.0.0.0/0', 'Everything')]
 
@@ -56,7 +56,7 @@ Adding Subnets
     # If 0.0.0.0/0 is not set, will return KeyError exception
     >>> nd['192.168.1.1/16'] = 'Home'
     >>> nd['192.168.1.1']
-    ['192.168.0.0/16', '0.0.0.0/16']
+    ['192.168.0.0/16', '0.0.0.0/0']
     # Note that the key was normalized to a proper subnet
 
 
@@ -82,7 +82,7 @@ IPv6 Subnets
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
     KeyError: No matching networks found, and no default network set
-    # we didn't set '::/0', which is different from the '0.0.0.0/0' which is already set
+    # we didn't set '::/0', which is different from the '0.0.0.0/0' subnet
     >>> nd['::1/128'] = 'Localhost'
     # Note: /128 is a hostmask, so will be ignored if ignoreHosts = True (default)
     >>> nd['::1']
