@@ -60,8 +60,8 @@ Adding Subnets
     # Note that the key was normalized to a proper subnet
 
 
-Hosts and /32 prefixes
-----------------------
+Hosts (IPv4 /32 or IPv6 /128)
+-----------------------------
 
 .. code:: python
 
@@ -95,6 +95,9 @@ Setting options at creation
 
     >>> nd = NetworkDict(format = 'both', firstHit = False, ignoreHosts = True)
     # Returns an empty NetworkDict object, but with default options set
+    >>> nd['192.168.0.0/16'] = 'Home'
+    >>> nd['192.168.1.1']
+    [('192.168.0.0/16', 'Home')]
 
 
 Requirements
