@@ -22,7 +22,7 @@ Simple Example
         '0.0.0.0/0': 'Everything',
         '10.0.0.0/8': 'Office',
         '10.1.0.0/16': 'Region 1',
-        '10.1.1.0/255.255.255.0':  'City 1' # Can take multiple netmasks
+        '10.1.1.0/24':  'City 1'
         }
 
     ns = NetworkDict(networks)
