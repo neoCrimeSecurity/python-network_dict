@@ -36,12 +36,12 @@ Simple Example
     >>> nd['10.1.1.1']
     ['City 1', 'Region 1', 'Office', 'Everything']
 
-    >>> nd.format = both
+    >>> nd.format = "both"
     # return both the subnet and value in a tuple, default is "value"
     >>> nd['10.1.1.1']
     [('10.1.1.0/24', 'City 1'), ('10.1.0.0/16', 'Region 1'), ('10.0.0.0/8', 'Office'), ('0.0.0.0/0', 'Everything')]
 
-    >>> nd.format = key
+    >>> nd.format = "key"
     # return just the subnet address
     >>> nd['10.1.1.1']
     ['10.1.1.0/24', '10.1.0.0/16', '10.0.0.0/8', '0.0.0.0/0']
