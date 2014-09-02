@@ -107,7 +107,7 @@ Setting options at creation
 Requirements
 ============
 
-* Tested on python 2.8
+* Tested on python 2.7
 * netaddr library
 
 Installation
